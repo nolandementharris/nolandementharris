@@ -1,0 +1,195 @@
+%% ASEN 3801 Lab 4
+% Authors:
+% Date created: 15/11/2024
+
+clear;
+close all;
+clc;
+
+%% Givens
+m = 0.068; % kg
+d = 0.060; % m
+km = 0.0024;% N*m/(N)
+Ix = 5.8E-5; % kg*m^2
+Iy = 7.2E-5; % kg*m^2
+Iz = 1.0E-4; % kg*m^2
+nu = 1E-3; % N/(m/s)^2
+mu = 2E-6; % N*m/(rad/s)^2
+tspan = 0:.1:10; % s
+g = 9.81; % m/s^2
+I = [Ix; Iy; Iz];
+Zc = -0.667; % N
+motor_forces = [Zc/4; Zc/4; Zc/4; Zc/4];
+
+%% 3.1 
+% Feedback Gains Found
+
+%% 3.2
+% Function Developed
+
+%% 3.3 NOT CORRECT
+% Using the function from Problem 3.2, create a new EOM function to simulate the
+% response of the closed loop linearized system. Use this new function to simulate initial
+% condition deviations from the steady hover trim state as follows (use a 10 sec simulation
+% window):
+    % a. Deviation by +5 deg in roll
+    % b. Deviation by +5 deg in pitch
+    % c. Deviation by +0.1 rad/sec in roll rate
+    % d. Deviation by +0.1 rad/sec in pitch rate
+% Submit plots of the aircraft state variables and motor forces versus time for each case
+% (Figure 7 from PlotAircraftSim.m). Discuss the resulting behavior. Does it correspond to
+% the expected behavior from the linearized modal response theory? Is steady hover now a
+% stable flight condition?
+
+% % Define state vector for initial conditions of zero
+% state_vec = zeros(12,1);
+%     % Define Initial perturbation
+%         %state_vec(4) = deg2rad(5); % Roll 5 deg
+%         %state_vec(5) = deg2rad(5); % Pitch 5 deg
+%         %state_vec(10) = 0.1; % Roll rate 0.1 rad/sec
+%         %state_vec(11) = 0.1; % Pitch rate 0.1 rad/sec
+% tspan = [0 10];
+% deltaFc = zeros(3);
+% deltaGc = zeros(3);
+%     [time,aircraft_state_array] = ode45(@(t,var) QuadrotorEOM_Linearized(t,var,g,m,I,deltaFc,deltaGc),tspan,state_vec);
+%     for i = 1:length(time)
+%         [Fc, Gc] = InnerLoopFeedback(aircraft_state_array(i,:));
+%         motor_input(i,:) = ComputeMotorForces(Fc,Gc,d,km);
+%     end
+%     fig = [1;2;3;4;5;6;7];
+%     col = 'b-';
+%     PlotAircraftSim(time, aircraft_state_array, motor_input, fig, col)
+
+
+
+%% 3.4 NOT CORRECT YET
+% Repeat Problem 3.3 (i.e. create a new EOM function that adds the control to the nonlinear
+% quadrotor dynamics) using the nonlinear dynamics model together with the feedback
+% control design for the linearized system, and compare the closed loop linearized and
+% nonlinear behaviors
+
+
+state_vec = zeros(12,1);
+    % Define Initial perturbation
+        %state_vec(4) = deg2rad(5); % Roll 5 deg
+        %state_vec(5) = deg2rad(5); % Pitch 5 deg
+        %state_vec(10) = 0.1; % Roll rate 0.1 rad/sec
+        state_vec(11) = 0.1; % Pitch rate 0.1 rad/sec
+tspan = [0 10];
+deltaFc = [0 0 0];
+deltaGc = [0 0 0];
+[time,aircraft_state_array] = ode45(@(t,var) QuadrotorEOM_Non_Linear(t,var,g,m,I,d,km,nu,mu),tspan,state_vec);
+    for i = 1:length(time)
+        [Fc, Gc] = InnerLoopFeedback(aircraft_state_array(i,:));
+        motor_input(i,: ) = ComputeMotorForces(Fc,Gc,d,km);
+    end
+    fig = [1;2;3;4;5;6;7]+49;
+    col = 'b-';
+    PlotAircraftSim(time, aircraft_state_array, motor_input, fig, col)
+
+%% 3.5
+% K3 found
+
+%% 3.6
+% Function Developed
+
+%% 3.7 
+% Using the controller from Problem 3.6, create another nonlinear EOM function and
+% simulate this system in Matlab, for both longitudinal and lateral translation, one at a time,
+% and verify that the simulation behaves as desired. Provide reasoning for the differences
+% between expected and actual behavior. Include the full-size versions of all plots, that is,
+% Figures 1-6 from PlotAircraftSim.m.
+
+
+
+%% Save Graphs
+% Part 3.3
+% a (roll dev)
+% saveas(1,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_roll_1.jpg");
+% saveas(2,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_roll_2.jpg");
+% saveas(3,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_roll_3.jpg");
+% saveas(4,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_roll_4.jpg");
+% saveas(5,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_roll_5.jpg");
+% saveas(6,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_roll_6.jpg");
+% saveas(7,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_roll_7.jpg");
+
+% b (pitch dev)
+% saveas(8,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_pitch_1.jpg");
+% saveas(9,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_pitch_2.jpg");
+% saveas(10,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_pitch_3.jpg");
+% saveas(11,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_pitch_4.jpg");
+% saveas(12,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_pitch_5.jpg");
+% saveas(13,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_pitch_6.jpg");
+% saveas(14,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_pitch_7.jpg");
+
+% c (roll rate)
+% saveas(15,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_roll_rate_1.jpg");
+% saveas(16,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_roll_rate_2.jpg");
+% saveas(17,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_roll_rate_3.jpg");
+% saveas(18,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_roll_rate_4.jpg");
+% saveas(19,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_roll_rate_5.jpg");
+% saveas(20,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_roll_rate_6.jpg");
+% saveas(21,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_roll_rate.jpg");
+
+% d (pitch rate)
+% saveas(22,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_pitch_rate_1.jpg");
+% saveas(23,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_pitch_rate_2.jpg");
+% saveas(24,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_pitch_rate_3.jpg");
+% saveas(25,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_pitch_rate_4.jpg");
+% saveas(26,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_pitch_rate_5.jpg");
+% saveas(27,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_pitch_rate_6.jpg");
+% saveas(28,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Linear_pitch_rate.jpg");
+
+% Part 3.4
+% saveas(29,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_roll_1.jpg");
+% saveas(30,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_roll_2.jpg");
+% saveas(31,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_roll_3.jpg");
+% saveas(32,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_roll_4.jpg");
+% saveas(33,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_roll_5.jpg");
+% saveas(34,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_roll_6.jpg");
+% saveas(35,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_roll.jpg");
+
+% b (pitch dev)
+% saveas(36,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_pitch_1.jpg");
+% saveas(37,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_pitch_2.jpg");
+% saveas(38,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_pitch_3.jpg");
+% saveas(39,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_pitch_4.jpg");
+% saveas(40,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_pitch_5.jpg");
+% saveas(41,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_pitch_6.jpg");
+% saveas(42,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_pitch_.jpg");
+
+% c (roll rate)
+% saveas(43,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_roll_rate_1.jpg");
+% saveas(44,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_roll_rate_2.jpg");
+% saveas(45,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_roll_rate_3.jpg");
+% saveas(46,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_roll_rate_4.jpg");
+% saveas(47,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_roll_rate_5.jpg");
+% saveas(48,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_roll_rate_6.jpg");
+% saveas(49,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_roll_rate.jpg");
+
+% d (pitch rate)
+saveas(50,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_pitch_rate_1.jpg");
+saveas(51,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_pitch_rate_2.jpg");
+saveas(52,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_pitch_rate_3.jpg");
+saveas(53,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_pitch_rate_4.jpg");
+saveas(54,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_pitch_rate_5.jpg");
+saveas(55,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_pitch_rate_6.jpg");
+% saveas(56,"plots/ASEN3801_Lab_4_Problem3_InnerLoop_Non_Linear_pitch_rate.jpg");
+
+% Part 3.7 Longitudinal
+% saveas(57,"plots/ASEN3801_Lab_4_Problem3_Long_Trans_1.jpg");
+% saveas(58,"plots/ASEN3801_Lab_4_Problem3_Long_Trans_2.jpg");
+% saveas(59,"plots/ASEN3801_Lab_4_Problem3_Long_Trans_3.jpg");
+% saveas(60,"plots/ASEN3801_Lab_4_Problem3_Long_Trans_4.jpg");
+% saveas(61,"plots/ASEN3801_Lab_4_Problem3_Long_Trans_5.jpg");
+% saveas(62,"plots/ASEN3801_Lab_4_Problem3_Long_Trans_6.jpg");
+% saveas(63,"plots/ASEN3801_Lab_4_Problem3_Long_Trans.jpg");
+
+% Part 3.7 Lateral
+% saveas(64,"plots/ASEN3801_Lab_4_Problem3_Lat_Trans_1.jpg");
+% saveas(65,"plots/ASEN3801_Lab_4_Problem3_Lat_Trans_2.jpg");
+% saveas(66,"plots/ASEN3801_Lab_4_Problem3_Lat_Trans_3.jpg");
+% saveas(67,"plots/ASEN3801_Lab_4_Problem3_Lat_Trans_4.jpg");
+% saveas(68,"plots/ASEN3801_Lab_4_Problem3_Lat_Trans_5.jpg");
+% saveas(69,"plots/ASEN3801_Lab_4_Problem3_Lat_Trans_6.jpg");
+% saveas(70,"plots/ASEN3801_Lab_4_Problem3_Lat_Trans.jpg");

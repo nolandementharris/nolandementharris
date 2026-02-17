@@ -1,0 +1,10 @@
+function var_dot = QuadrotorEOM_Non_Linear(time,var, g, m, I, km, nu, mu);
+% Nolan Harris
+% ASEN 3801 Lab 4
+% QuadrotorEOM_Non_Linear
+% Created: 21/11/2024
+
+% Call Quadrotor EOM t
+
+end
+
