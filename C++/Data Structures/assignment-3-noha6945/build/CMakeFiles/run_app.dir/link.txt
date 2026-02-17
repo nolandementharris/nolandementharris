@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -Wall -g -rdynamic CMakeFiles/run_app.dir/app_1/main_1.cpp.o CMakeFiles/run_app.dir/code_1/browserHistory.cpp.o -o run_app 
