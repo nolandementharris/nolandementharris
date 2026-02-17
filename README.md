@@ -10,7 +10,7 @@ My academic and technical background is rooted in the link between theoretical f
 - **AIAA General Officer**: Help connect students with industry initiatives and opportunities via conferences, tours, scholarships, and other networking events. I am also responsible for the [website](https://sites.google.com/site/aiaacu/).
 
 ### 💡 Skills
-- **Programming**: C, C++, [Python](Python), [MATLAB](MATLAB), [MySQL](SQL)
+- **Programming**: C, [C++](C++), [Python](Python), [MATLAB](MATLAB), [MySQL](SQL)
 - **Software**: Adobe Photoshop/Lightroom, GitHub, ArduPilot, INAV, SolidWorks, OpenVSP, EAGLE, LaTeX/Overleaf, MATLAB Simulink
 - **Hardware**: Rapid Prototyping, 3D Printing, PCB Manufacturing, Woodworking, Machine Shop, Soldering
 
