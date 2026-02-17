@@ -15,6 +15,7 @@ My academic and technical background is rooted in the link between theoretical f
 - **Hardware**: Rapid Prototyping, 3D Printing, PCB Manufacturing, Woodworking, Machine Shop, Soldering
 
 ### 🔭 Personal Projects
+- **Electric Skateboard**: Soldered motor wires and heat-molded enclosure. Relieved overheating and connection issues.
 
 ### 📫 More About Me:
 - [**LinkedIn**](https://www.linkedin.com/in/nolanharris1/)
