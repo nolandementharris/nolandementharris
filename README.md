@@ -4,7 +4,7 @@ I am an **Aerospace Engineering** student at the **University of Colorado Boulde
 My academic and technical background is rooted in the link between theoretical flight mechanics and embedded software implementation. This interest spans a variety of aerospace applications, including **modeling variable-geometry stability** for passenger aircraft, engineering **bioastronautics triage devices** for simulated Mars environments, and developing **predictive simulations** for boost-glide dynamics.
 
 ### 📌 Current Experience
-- **Passenger Transport Aircraft**: Improve efficiency on a transsonic aircraft and validate the model via Simulink and two technological demonstrators.
+- **[Passenger Transport Aircraft](https://github.com/nolandementharris/PTA_Stampede_Sky.git)**: Improve efficiency on a transsonic aircraft and validate the model via Simulink and two technological demonstrators.
 - **AIAA Student Conference Presentation**: Will present work on Senior Project at the 2026 Region V Student Conference.
 - **Space Medicine Decision Aid**: Developing a decision aid to determine patient condition likelihood and subsequent treatment plan. Designed for validation at the Mars Desert Research Station.
 - **AIAA General Officer**: Help connect students with industry initiatives and opportunities via conferences, tours, scholarships, and other networking events.
