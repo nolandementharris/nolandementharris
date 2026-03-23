@@ -1,5 +1,5 @@
 ### Hi there👋 I’m Nolan Harris.
-I am an **Aerospace Engineering** student at the **University of Colorado Boulder** (Expected May 2026) with a **Computer Science minor**. I’m driven by a deep passion for how we design, simulate, and control vehicles in challenging environments—whether that’s in our atmosphere or beyond it. 
+I am an **Aerospace Engineering** student at the **University of Colorado Boulder** (Expected May 2026) with a **Computer Science minor**. After my undergraduate degree, I would like to work in industry, specifically  GNC, avionics, or Bioastronautics work until spring 2027, when I intend to begin my Master's at CU Boulder in Aerospace Engineering (Bioastronautics). I’m driven by a deep passion for how we design, simulate, and control vehicles in challenging environments—whether that’s in our atmosphere or beyond it. 
 
 My academic and technical background is rooted in the link between theoretical flight mechanics and embedded software implementation. This interest spans a variety of aerospace applications, including **modeling variable-geometry stability** for passenger aircraft, engineering **bioastronautics triage devices** for simulated Mars environments, and developing **predictive simulations** for boost-glide dynamics.
 
