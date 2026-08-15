@@ -4,7 +4,7 @@ I am an **Embedded Software Engineer** at **Raytheon Technologies**, currently e
 My academic and technical background is rooted in the link between theoretical flight mechanics and embedded software implementation. This interest spans a variety of aerospace applications, including **modeling variable-geometry stability** for passenger aircraft, engineering **bioastronautics triage devices** for simulated Mars environments, and developing **predictive simulations** for boost-glide dynamics.
 
 ### 📌 Current Experience
--**Raytheon:** Compiling and testing embedded software libraries through CMake and Linux environments.
+- **Raytheon:** Compiling and testing embedded software libraries through CMake and Linux environments.
 - **[Passenger Transport Aircraft](https://github.com/nolandementharris/PTA_Stampede_Sky.git)**: Improve efficiency on a transsonic aircraft and validate the model via Simulink and two technological demonstrators.
 - **AIAA Student Conference Presentation**: Presented work on Senior Project at the 2026 Region V Student Conference at Iowa State!
 - **[Space Medicine Decision Aid](https://github.com/nolandementharris/MDRS_Decision_Aid)**: Developing a decision aid to determine patient condition likelihood and subsequent treatment plan. Designed for validation at the Mars Desert Research Station. Moving forward, we have decided to pursue a peer-reviewed publication to continue work on the device and dive further into the medical logic.
