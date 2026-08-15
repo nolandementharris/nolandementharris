@@ -1,9 +1,10 @@
 ### Hi there👋 I’m Nolan Harris.
-I am an **Aerospace Engineering** student at the **University of Colorado Boulder** (Expected May 2026) with a **Computer Science minor**. After my undergraduate degree, I would like to work in industry, specifically  GNC, avionics, or Bioastronautics, to gain industry experience before returning to school to get my master's. I’m driven by a deep passion for how we design, simulate, and control vehicles in challenging environments—whether that’s in our atmosphere or beyond it. 
+I am an **Embedded Software Engineer** at **Raytheon Technologies**, currently exploring the many different environments in which hardware and software meet. I’m driven by a deep passion for how we design, simulate, and control vehicles in challenging environments—whether that’s in our atmosphere or beyond it. 
 
 My academic and technical background is rooted in the link between theoretical flight mechanics and embedded software implementation. This interest spans a variety of aerospace applications, including **modeling variable-geometry stability** for passenger aircraft, engineering **bioastronautics triage devices** for simulated Mars environments, and developing **predictive simulations** for boost-glide dynamics.
 
 ### 📌 Current Experience
+-**Raytheon:** Compiling and testing embedded software libraries through CMake and Linux environments.
 - **[Passenger Transport Aircraft](https://github.com/nolandementharris/PTA_Stampede_Sky.git)**: Improve efficiency on a transsonic aircraft and validate the model via Simulink and two technological demonstrators.
 - **AIAA Student Conference Presentation**: Presenting work on Senior Project at the 2026 Region V Student Conference at Iowa State!
 - **[Space Medicine Decision Aid](https://github.com/nolandementharris/MDRS_Decision_Aid)**: Developing a decision aid to determine patient condition likelihood and subsequent treatment plan. Designed for validation at the Mars Desert Research Station. After validation at MDRS, we have decided to move forward with a peer-reviewed publication to continue work on the device and dive further into the medical logic.
